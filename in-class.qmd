@@ -1,6 +1,9 @@
 ---
 title: "Subdivision In-Class Activity"
-format: html
+format: 
+  html:
+    code-tools: true
+    self-contained: true
 editor: source
 ---
 
