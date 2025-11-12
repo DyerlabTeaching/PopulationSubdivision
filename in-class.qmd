@@ -1,26 +1,75 @@
 ---
-title: "In Class Activity"
-format: 
-  html:
-    code-tools: true
-    toc: false
+title: "Subdivision In-Class Activity"
+format: html
+editor: source
 ---
 
-## Examples
+Population subdivision creates more realistic situations, where individuals in spatial proximity are more likely to mate with each other compared to individuals in different locales.  You will see a lot of terminology here, including population, deme, locale, subdivision, etc., all of which mean that one or more factors are challenging the fundamental assumption of random mating.  With subdivided populations, each individual's probability of mating depends upon which subdivision they reside in. This is mediated by connectivity, or gene flow (and migration if it is followed by mating).
+
+In this quick section, we are going to focus on:
+
+1.  Understanding how migration rates and population connectivity impact allele frequencies.
+
+2.  Predict future allele frequencies.
+
+3.  Communicate those findings.
+
+## Population Connectivity
+
+Consider the following connectivity graph of the three populations *x*, *y*, and *z*.
+
+![](https://www.flickr.com/photo_download.gne?id=54918100312&secret=26265c0455&size=c&source=photoPageEngagement)
+
+If the population start off with these frequencies.
+
+```{r}
+library( tidyverse )
+px <- 0.2
+py <- 0.8
+pz <- 0.9
+mxy <- 0.1 
+mxz <- 0.2
+myz <- 0.3
+```
+
+Estimate allele frequencies until equilibrium.
+
+```{r}
+N <- 100
+
+data.frame( px = c(px,rep(NA,N)),
+            py = c(py,rep(NA,N)),
+            pz = c(pz,rep(NA,N))) -> df
+head(df)
+```
+
+```{r}
+# run simulation
+```
 
 
-This in-class file is used for demonstrating individual examples related to this topic and is kept as a persistent record of examples provided during lectures.
+```{r}
+# plot the outcome
+```
 
-## The Data
+
+## Questions
+
+Use the code above and 
+
+1. What if $m_{y \leftrightarrow z}=0$, how does that change the trajectory in allele frequencies?
+
+```{r}
+# set myz=0, redo, and plot the allele frequencies for each population
+```
 
 
-## Vectors
+2. Reset the connectivity from the last question to the original one and add a fourth population (`w`) to the model that is connected in a **one-way migration** from population `z` with a rate of $m_{z \rightarrow w} = 0.05$ and a starting allele frequency of 0.1.  Create a plot of allele frequencies through time with a sufficient number of generations to allow the system to reach allele frequency equilibrium.
 
-## Matrices
+```{r}
+# add another population and plot allele frequencies.
+```
 
-## Lists
-
-## Data Frames
 
 
 
